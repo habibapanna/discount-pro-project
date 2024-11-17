@@ -1,0 +1,45 @@
+[
+    {
+      "id": "1",
+      "title": "50% Off on Electronics",
+      "discount": "50%",
+      "expiry_date": "2024-12-31",
+      "brand_id": "brand1"
+    },
+    {
+      "id": "2",
+      "title": "Buy 1 Get 1 Free",
+      "discount": "BOGO",
+      "expiry_date": "2024-11-30",
+      "brand_id": "brand2"
+    },
+    {
+      "id": "3",
+      "title": "20% Off Fashion",
+      "discount": "20%",
+      "expiry_date": "2025-01-15",
+      "brand_id": "brand3"
+    },
+    {
+      "id": "4",
+      "title": "10% Off on Groceries",
+      "discount": "10%",
+      "expiry_date": "2024-12-10",
+      "brand_id": "brand4"
+    },
+    {
+      "id": "5",
+      "title": "Free Shipping on Orders Over $50",
+      "discount": "Free Shipping",
+      "expiry_date": "2025-02-28",
+      "brand_id": "brand5"
+    },
+    {
+      "id": "6",
+      "title": "30% Off on Shoes",
+      "discount": "30%",
+      "expiry_date": "2024-12-25",
+      "brand_id": "brand1"
+    }
+  ]
+  

@@ -1,0 +1,167 @@
+[
+    {
+      "_id": "1a2b3c4d5e",
+      "brand_name": "TechMart",
+      "rating": 4.5,
+      "description": "TechMart offers a wide range of electronics and gadgets at the best prices.",
+      "brand_logo": "https://i.ibb.co.com/GRqG6jB/download-7.jpg",
+      "coupons": [
+        {
+          "coupon-code": "TECH10",
+          "description": "Get 10% off on all electronics",
+          "expiry-date": "2024-12-31",
+          "condition": "Minimum purchase of $100",
+          "cupon_type": "Percentage"
+        },
+        {
+          "coupon-code": "FREESHIPTM",
+          "description": "Free shipping on orders above $50",
+          "expiry-date": "2024-11-30",
+          "condition": "Applicable on all items",
+          "cupon_type": "Free Shipping"
+        }
+      ],
+      "shop-Link": "https://techmart.example.com",
+      "category": "Electronics",
+      "isSaleOn": true
+    },
+    {
+      "_id": "2f3g4h5i6j",
+      "brand_name": "FashionFiesta",
+      "rating": 4.0,
+      "description": "Your go-to store for the latest fashion trends and apparel.",
+      "brand_logo": "https://i.ibb.co.com/1T2n9B3/download-3.jpg",
+      "coupons": [
+        {
+          "coupon-code": "FASHION20",
+          "description": "20% discount on all clothing items",
+          "expiry-date": "2024-12-15",
+          "condition": "No minimum purchase",
+          "cupon_type": "Percentage"
+        },
+        {
+          "coupon-code": "BOGOFF",
+          "description": "Buy 1 get 1 free on select items",
+          "expiry-date": "2024-12-05",
+          "condition": "Applicable to marked items only",
+          "cupon_type": "Buy One Get One"
+        }
+      ],
+      "shop-Link": "https://fashionfiesta.example.com",
+      "category": "Clothing",
+      "isSaleOn": false
+    },
+    {
+      "_id": "3k4l5m6n7o",
+      "brand_name": "GroceryPlus",
+      "rating": 4.2,
+      "description": "Quality grocery products delivered straight to your doorstep.",
+      "brand_logo": "https://i.ibb.co.com/1bQBR1p/download-4.jpg",
+      "coupons": [
+        {
+          "coupon-code": "GROCERY5",
+          "description": "Save $5 on your first order",
+          "expiry-date": "2025-01-10",
+          "condition": "First-time users only",
+          "cupon_type": "Flat Discount"
+        },
+        {
+          "coupon-code": "ORGANIC20",
+          "description": "20% off on organic items",
+          "expiry-date": "2024-12-20",
+          "condition": "Applicable on organic category",
+          "cupon_type": "Percentage"
+        }
+      ],
+      "shop-Link": "https://groceryplus.example.com",
+      "category": "Groceries",
+      "isSaleOn": true
+    },
+    {
+      "_id": "4p5q6r7s8t",
+      "brand_name": "BookNest",
+      "rating": 4.7,
+      "description": "Discover a world of books with BookNest's extensive library.",
+      "brand_logo": "https://i.ibb.co.com/vZxbs9C/download-6.jpg",
+      "coupons": [
+        {
+          "coupon-code": "READ10",
+          "description": "Get 10% off all books",
+          "expiry-date": "2025-02-28",
+          "condition": "Applicable on hardcover editions",
+          "cupon_type": "Percentage"
+        },
+        {
+          "coupon-code": "FREESHIPBOOK",
+          "description": "Free shipping on orders above $30",
+          "expiry-date": "2024-11-25",
+          "condition": "Valid for domestic shipping only",
+          "cupon_type": "Free Shipping"
+        }
+      ],
+      "shop-Link": "https://booknest.example.com",
+      "category": "Books",
+      "isSaleOn": true
+    },
+    {
+      "_id": "5u6v7w8x9y",
+      "brand_name": "HomeStyle",
+      "rating": 4.3,
+      "description": "HomeStyle provides quality home decor and furniture.",
+      "brand_logo": "https://i.ibb.co.com/hFKP2YB/download-5.jpg",
+      "coupons": [
+        {
+          "coupon-code": "DECOR15",
+          "description": "15% off on home decor items",
+          "expiry-date": "2025-01-15",
+          "condition": "No minimum purchase required",
+          "cupon_type": "Percentage"
+        },
+        {
+          "coupon-code": "FURNI50",
+          "description": "Flat $50 discount on furniture",
+          "expiry-date": "2024-12-10",
+          "condition": "Minimum purchase of $500",
+          "cupon_type": "Flat Discount"
+        }
+      ],
+      "shop-Link": "https://homestyle.example.com",
+      "category": "Home Decor",
+      "isSaleOn": false
+    },
+    {
+      "_id": "6z7a8b9c0d",
+      "brand_name": "BeautyBazaar",
+      "rating": 4.6,
+      "description": "Find all your beauty essentials at BeautyBazaar.",
+      "brand_logo": "https://i.ibb.co.com/3vnqDxh/download.jpg",
+      "coupons": [
+        {
+          "coupon-code": "BEAUTY10",
+          "description": "10% off on all beauty products",
+          "expiry-date": "2024-12-25",
+          "condition": "Applicable on orders over $20",
+          "cupon_type": "Percentage"
+        },
+        {
+          "coupon-code": "SKINCARE5",
+          "description": "Save $5 on skincare items",
+          "expiry-date": "2024-12-31",
+          "condition": "No restrictions",
+          "cupon_type": "Flat Discount"
+        }
+      ],
+      "shop-Link": "https://beautybazaar.example.com",
+      "category": "Beauty",
+      "isSaleOn": true
+    }
+  ]
+
+
+  
+
+
+
+
+
+  
