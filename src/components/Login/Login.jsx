@@ -1,11 +1,12 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../providers/AuthProvider';
 import { toast } from 'react-toastify';
 
 const Login = () => {
-    const { userLogin, setUser, googleSignIn } = useContext(AuthContext);
+    const { userLogin, setUser, googleSignIn, logout } = useContext(AuthContext);
     const navigate = useNavigate();
+    const [email, setEmail] = useState('');
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -38,6 +39,8 @@ const Login = () => {
             });
     };
 
+    const handleEmailChange = (e) => setEmail(e.target.value);
+
     return (
         <div className='flex justify-center items-center mt-12'>
             <div className="card p-10 bg-base-100 w-full max-w-xl border shrink-0 shadow-lg">
@@ -47,7 +50,15 @@ const Login = () => {
                         <label className="label">
                             <span className="label-text">Email</span>
                         </label>
-                        <input name="email" type="email" placeholder="email" className="input input-bordered" required />
+                        <input 
+                            name="email" 
+                            type="email" 
+                            placeholder="email" 
+                            className="input input-bordered" 
+                            required 
+                            value={email}
+                            onChange={handleEmailChange}
+                        />
                     </div>
                     <div className="form-control">
                         <label className="label">
@@ -55,7 +66,11 @@ const Login = () => {
                         </label>
                         <input name="password" type="password" placeholder="password" className="input input-bordered" required />
                         <label className="label">
-                            <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
+                            <Link 
+                                to="/forgot" 
+                                className="label-text-alt link link-hover">
+                                Forgot password?
+                            </Link>
                         </label>
                     </div>
                     <div className="form-control mt-6">

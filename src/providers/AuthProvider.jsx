@@ -22,12 +22,10 @@ const AuthProvider = ({ children }) => {
     }
 
     const userLogin = (email, password) => {
-        // Return the result for .then() to work in Login component
         return signInWithEmailAndPassword(auth, email, password);
     }
 
     const googleSignIn = () => {
-        // Implement Google sign-in logic and return the result
         return signInWithPopup(auth, googleProvider);
     }
 
@@ -48,9 +46,9 @@ const AuthProvider = ({ children }) => {
         user,
         setUser,
         createNewUser,
-        logOut,
+        logOut, // Ensure logOut is passed in context
         userLogin,
-        googleSignIn, // Provide googleSignIn to the context
+        googleSignIn,
     }
 
     return (

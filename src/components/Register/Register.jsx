@@ -6,6 +6,7 @@ import { toast } from 'react-toastify';
 const Register = () => {
     const { createNewUser, setUser, googleSignIn } = useContext(AuthContext);
     const [error, setError] = useState('');
+    const [passwordVisible, setPasswordVisible] = useState(false); // State to toggle password visibility
     const navigate = useNavigate();
 
     const handleSubmit = (e) => {
@@ -83,14 +84,43 @@ const Register = () => {
                         <label className="label">
                             <span className="label-text">Password</span>
                         </label>
-                        <input name="password" type="password" placeholder="password" className="input input-bordered" required />
+                        <div className="relative">
+                            <input
+                                name="password"
+                                type={passwordVisible ? 'text' : 'password'} // Toggle password visibility
+                                placeholder="password"
+                                className="input input-bordered w-full"
+                                required
+                            />
+                            <span
+                                onClick={() => setPasswordVisible(!passwordVisible)} // Toggle password visibility
+                                className="absolute right-3 top-3 cursor-pointer"
+                            >
+                                {passwordVisible ? (
+                                    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 12h.01M19.07 4.93a10 10 0 11-14.14 14.14 10 10 0 0114.14-14.14z" />
+                                    </svg>
+                                ) : (
+                                    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 12h.01M19.07 4.93a10 10 0 11-14.14 14.14 10 10 0 0114.14-14.14z" />
+                                    </svg>
+                                )}
+                            </span>
+                        </div>
                     </div>
                     {error && <p className="text-red-500">{error}</p>}
                     <div className="form-control mt-6">
                         <button className="btn btn-primary">Register</button>
                     </div>
-                    <p className='text-red-500 font-semibold'>Already have an account? <Link className='hover:underline text-blue-500' to="/login">Login</Link></p>
-                    <button onClick={handleGoogleSignIn} type="button" className="btn btn-secondary mt-4 w-full">Sign Up with Google</button>
+                    <p className='text-red-500 font-semibold'>
+                        Already have an account?{' '}
+                        <Link className='hover:underline text-blue-500' to="/login">
+                            Login
+                        </Link>
+                    </p>
+                    <button onClick={handleGoogleSignIn} type="button" className="btn btn-secondary mt-4 w-full">
+                        Sign Up with Google
+                    </button>
                 </form>
             </div>
         </div>

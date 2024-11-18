@@ -18,6 +18,8 @@ import Register from './components/Register/Register';
 import AuthProvider from './providers/AuthProvider';
 import PrivateRoute from './components/PrivateRoute/PrivateRoute';
 import { ToastContainer } from 'react-toastify';
+import ForgotPassword from './components/ForgotPassword/ForgotPassword';
+import UpdateProfile from './components/UpdateProfile/UpdateProfile';
 
 const router = createBrowserRouter([
   {
@@ -44,6 +46,10 @@ const router = createBrowserRouter([
         </PrivateRoute>,
       },
       {
+        path: '/update-profile',
+        element: <UpdateProfile></UpdateProfile>,
+      },   
+      {
         path: '/about',
         element: <About></About>,
       },   
@@ -54,6 +60,10 @@ const router = createBrowserRouter([
       {
         path: '/register',
         element: <Register></Register>,
+      },   
+      {
+        path: '/forgot',
+        element: <ForgotPassword></ForgotPassword>,
       },   
     ], 
   },
