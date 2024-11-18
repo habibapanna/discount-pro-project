@@ -21,7 +21,7 @@
           "cupon_type": "Free Shipping"
         }
       ],
-      "shop-Link": "https://techmart.example.com",
+      "shop-Link": "https://www.facebook.com/beautybazaarnz/?locale=en_GB",
       "category": "Electronics",
       "isSaleOn": true
     },
@@ -47,7 +47,7 @@
           "cupon_type": "Buy One Get One"
         }
       ],
-      "shop-Link": "https://fashionfiesta.example.com",
+      "shop-Link": "https://www.facebook.com/beautybazaarnz/?locale=en_GB",
       "category": "Clothing",
       "isSaleOn": false
     },
@@ -73,7 +73,7 @@
           "cupon_type": "Percentage"
         }
       ],
-      "shop-Link": "https://groceryplus.example.com",
+      "shop-Link": "https://www.facebook.com/beautybazaarnz/?locale=en_GB",
       "category": "Groceries",
       "isSaleOn": true
     },
@@ -99,7 +99,7 @@
           "cupon_type": "Free Shipping"
         }
       ],
-      "shop-Link": "https://booknest.example.com",
+      "shop-Link": "https://www.facebook.com/beautybazaarnz/?locale=en_GB",
       "category": "Books",
       "isSaleOn": true
     },
@@ -125,7 +125,7 @@
           "cupon_type": "Flat Discount"
         }
       ],
-      "shop-Link": "https://homestyle.example.com",
+      "shop-Link": "https://www.facebook.com/beautybazaarnz/?locale=en_GB",
       "category": "Home Decor",
       "isSaleOn": false
     },
@@ -151,7 +151,7 @@
           "cupon_type": "Flat Discount"
         }
       ],
-      "shop-Link": "https://beautybazaar.example.com",
+      "shop-Link": "https://www.facebook.com/beautybazaarnz/?locale=en_GB",
       "category": "Beauty",
       "isSaleOn": true
     }

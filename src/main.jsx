@@ -13,6 +13,11 @@ import MyProfile from './components/MyProfile/MyProfile';
 import About from './components/About/About';
 import TopBrands from './components/TopBrands/TopBrands';
 import BrandDetails from './components/BrandDetails/BrandDetails';
+import Login from './components/Login/Login';
+import Register from './components/Register/Register';
+import AuthProvider from './providers/AuthProvider';
+import PrivateRoute from './components/PrivateRoute/PrivateRoute';
+import { ToastContainer } from 'react-toastify';
 
 const router = createBrowserRouter([
   {
@@ -34,19 +39,34 @@ const router = createBrowserRouter([
       },
       {
         path: '/profile',
-        element: <MyProfile></MyProfile>,
+        element: <PrivateRoute>
+          <MyProfile></MyProfile>
+        </PrivateRoute>,
       },
       {
         path: '/about',
         element: <About></About>,
-      },
-    ]
+      },   
+      {
+        path: '/login',
+        element: <Login></Login>,
+      },   
+      {
+        path: '/register',
+        element: <Register></Register>,
+      },   
+    ], 
   },
+
 ]);
 
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-      <RouterProvider router={router} />
+    <AuthProvider>
+    <RouterProvider router={router} />
+    <ToastContainer></ToastContainer>
+    </AuthProvider>
+      
   </StrictMode>
 );

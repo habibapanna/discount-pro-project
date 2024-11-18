@@ -1,8 +1,12 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useContext } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { AuthContext } from '../../providers/AuthProvider';
 
 const BrandsPage = () => {
   const [brands, setBrands] = useState([]);
   const [searchTerm, setSearchTerm] = useState('');
+  const { user } = useContext(AuthContext);
+  const navigate = useNavigate();
 
   useEffect(() => {
     // Fetch brands data from an API or local file
@@ -55,15 +59,18 @@ const BrandsPage = () => {
             <button
               className="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition"
               onClick={() => {
-                // Implement navigation logic to go to the brand's coupon details page
-                // e.g., navigate(`/brand/${brand._id}`);
+                if (user) {
+                  navigate(`/brand/${brand._id}`);
+                } else {
+                  navigate('/login');
+                }
               }}
             >
               View Coupons
             </button>
 
             {/* "Sale is on" Bouncing Text */}
-            {brand.saleIsOn && (
+            {brand.isSaleOn && (
               <div className="mt-3 text-red-500 font-semibold animate-bounce">
                 Sale is on!
               </div>
