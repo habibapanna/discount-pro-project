@@ -1,7 +1,7 @@
 import { NavLink } from "react-router-dom";
 
 
-const Header = () => {
+const Navbar = () => {
 
   const links = <>
 
@@ -39,7 +39,7 @@ const Header = () => {
             </ul>
           </div>
           <img className="w-1/12 rounded-full " src="https://i.ibb.co.com/VjPybjQ/logo.webp" alt="" />
-          <h1 className="font-bold text-2xl text-red-500">COUPON</h1>
+          <h1 className="font-bold text-2xl text-red-500"><i>COUPON</i></h1>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">
@@ -54,7 +54,7 @@ const Header = () => {
 <h1 className="text-3xl font-bold pt-5 text-blue-500">
 Welcome to ...
 </h1>
-<p className="text-red-300 text-sm mt-2">
+<p className="text-gray-400 text-sm mt-2 mb-12">
 Get the latest coupons and discounts <br />
 Over 10,000 deals from top brands and stores
 </p>
@@ -64,4 +64,4 @@ Over 10,000 deals from top brands and stores
   );
 };
 
-export default Header;
+export default Navbar;
