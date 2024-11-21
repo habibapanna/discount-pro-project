@@ -7,7 +7,7 @@ Discount PRO is a web-based coupon-collecting application that helps users find 
 Live Demo of Discount PRO (https://b10-a9-my-first-firebase-assignment.surge.sh)
 
 ## Key Features
-- **User Authentication**: Users can register and log in using email/password or via Google Sign-In, powered by Firebase Authentication
+- **User Authentication**: Users can register and log in using email/password or via Google Sign-In, powered by Firebase Authentication.
 - **Responsive Design**: The app is designed to be fully responsive, ensuring a seamless user experience across all devices.
 - **Dynamic Coupon Management**: Displays coupons in a grid format with options to copy codes and use them directly on the respective brand's site.
 - **Search and Filter Functionality**: Users can search for specific brands and filter results.

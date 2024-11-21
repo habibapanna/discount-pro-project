@@ -2,6 +2,7 @@ import React, { useContext, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../providers/AuthProvider';
 import { toast } from 'react-toastify';
+import { updateProfile } from 'firebase/auth'; // Import for profile updates
 
 const Register = () => {
     const { createNewUser, setUser, googleSignIn } = useContext(AuthContext);
@@ -9,7 +10,7 @@ const Register = () => {
     const [passwordVisible, setPasswordVisible] = useState(false); // State to toggle password visibility
     const navigate = useNavigate();
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
         const form = e.target;
         const name = form.name.value;
@@ -32,35 +33,55 @@ const Register = () => {
         }
 
         setError('');
-        createNewUser(email, password)
-            .then(result => {
-                const user = result.user;
-                setUser({ ...user, displayName: name, photoURL: photo }); // Set display name and photo
-                toast.success("Registration successful!");
-                navigate("/"); // Navigate to home after successful registration
-            })
-            .catch((error) => {
-                toast.error(error.message || "Registration failed");
+
+        try {
+            const result = await createNewUser(email, password);
+            const user = result.user;
+
+            // Update user profile with display name and photo URL
+            await updateProfile(user, {
+                displayName: name,
+                photoURL: photo,
             });
+
+            // Set user in context
+            setUser({ ...user });
+
+            // Show success message
+            toast.success("Registration successful!");
+
+            // Navigate to the home page
+            navigate('/');
+        } catch (error) {
+            // Handle registration errors
+            setError(error.message);
+            toast.error(error.message || "Registration failed");
+        }
     };
 
-    const handleGoogleSignIn = () => {
-        googleSignIn()
-            .then(result => {
-                const user = result.user;
-                setUser(user);
-                toast.success("Google sign-in successful!");
-                navigate("/");
-            })
-            .catch(error => {
-                toast.error(error.message || "Google sign-in failed");
-            });
+    const handleGoogleSignIn = async () => {
+        try {
+            const result = await googleSignIn();
+            const user = result.user;
+
+            // Set user in context
+            setUser(user);
+
+            // Show success message
+            toast.success("Google sign-in successful!");
+
+            // Navigate to the home page
+            navigate('/');
+        } catch (error) {
+            // Handle Google sign-in errors
+            toast.error(error.message || "Google sign-in failed");
+        }
     };
 
     return (
-        <div className='flex justify-center items-center mt-12'>
+        <div className="flex justify-center items-center mt-12">
             <div className="card p-10 border bg-base-100 w-full max-w-xl shrink-0 shadow-lg">
-                <h1 className='text-2xl font-bold text-center'>Register Your Account</h1>
+                <h1 className="text-2xl font-bold text-center">Register Your Account</h1>
                 <form onSubmit={handleSubmit} className="card-body">
                     <div className="form-control">
                         <label className="label">
@@ -87,18 +108,18 @@ const Register = () => {
                         <div className="relative">
                             <input
                                 name="password"
-                                type={passwordVisible ? 'text' : 'password'} // Toggle password visibility
+                                type={passwordVisible ? 'text' : 'password'}
                                 placeholder="password"
                                 className="input input-bordered w-full"
                                 required
                             />
                             <span
-                                onClick={() => setPasswordVisible(!passwordVisible)} // Toggle password visibility
+                                onClick={() => setPasswordVisible(!passwordVisible)}
                                 className="absolute right-3 top-3 cursor-pointer"
                             >
                                 {passwordVisible ? (
                                     <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 12h.01M19.07 4.93a10 10 0 11-14.14 14.14 10 10 0 0114.14-14.14z" />
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 16h-1v-4h-1m2 8h.01M21 21l-6-6m2-3a6 6 0 10-12 0 6 6 0 0012 0z" />
                                     </svg>
                                 ) : (
                                     <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -112,9 +133,9 @@ const Register = () => {
                     <div className="form-control mt-6">
                         <button className="btn btn-primary">Register</button>
                     </div>
-                    <p className='text-red-500 font-semibold'>
+                    <p className="text-red-500 font-semibold">
                         Already have an account?{' '}
-                        <Link className='hover:underline text-blue-500' to="/login">
+                        <Link className="hover:underline text-blue-500" to="/login">
                             Login
                         </Link>
                     </p>
