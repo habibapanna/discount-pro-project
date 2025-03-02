@@ -3,7 +3,8 @@ import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../providers/AuthProvider';
 import { toast } from 'react-toastify';
 import { updateProfile } from 'firebase/auth'; // Import for profile updates
-
+import { FcGoogle } from "react-icons/fc";
+import { MdOutlineAppRegistration } from "react-icons/md";
 const Register = () => {
     const { createNewUser, setUser, googleSignIn } = useContext(AuthContext);
     const [error, setError] = useState('');
@@ -79,7 +80,7 @@ const Register = () => {
     };
 
     return (
-        <div className="flex justify-center items-center mt-12">
+        <div className="flex justify-center items-center mt-12 px-10">
             <div className="card p-10 border bg-base-100 w-full max-w-xl shrink-0 shadow-lg">
                 <h1 className="text-2xl font-bold text-center">Register Your Account</h1>
                 <form onSubmit={handleSubmit} className="card-body">
@@ -131,7 +132,7 @@ const Register = () => {
                     </div>
                     {error && <p className="text-red-500">{error}</p>}
                     <div className="form-control mt-6">
-                        <button className="btn btn-primary">Register</button>
+                        <button className="btn bg-green-400 hover:bg-green-500"><MdOutlineAppRegistration /> Register</button>
                     </div>
                     <p className="text-red-500 font-semibold">
                         Already have an account?{' '}
@@ -139,7 +140,7 @@ const Register = () => {
                             Login
                         </Link>
                     </p>
-                    <button onClick={handleGoogleSignIn} type="button" className="btn btn-secondary mt-4 w-full">
+                    <button onClick={handleGoogleSignIn} type="button" className="btn bg-white border border-blue-400 mt-4 w-full"><FcGoogle className='text-2xl' /> 
                         Sign Up with Google
                     </button>
                 </form>

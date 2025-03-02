@@ -7,7 +7,7 @@ const MyProfile = () => {
 
     return (
         <div className="min-h-screen bg-gray-100">
-            <div className="relative h-60 bg-cover bg-center" style={{ backgroundImage: 'url(https://i.ibb.co/com/60GR9WF/images-5.jpg)' }}>
+            <div className="relative h-60 bg-cover bg-center" style={{ backgroundImage: 'url(https://i.ibb.co.com/T6VF6RJ/ben-sweet-2-Lowvi-VHZ-E-unsplash.jpg)' }}>
                 <div className="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
                     <h1 className="text-4xl text-white font-bold">Welcome to Your Profile</h1>
                 </div>

@@ -44,20 +44,28 @@ const BrandDetails = () => {
   }
 
   return (
-    <div className='text-center max-w-4xl mx-auto bg-yellow-300 border shadow-xl rounded-lg p-5'>
+<div className='px-12'>
+<div className='text-center max-w-4xl mx-auto border shadow-xl rounded-lg p-5'>
       <ToastContainer /> {/* Ensure ToastContainer is rendered */}
-      <h1 className='text-3xl font-bold py-3'>{brand.brand_name}</h1>
+      
+     <div className='flex flex-col md:flex-row gap-5 w-full'>
+     <div className='md:w-1/2'>
       <img
         src={brand.brand_logo}
         alt={brand.brand_name}
-        className="w-64 h-64 rounded-lg mb-4 mx-auto"
+        className="w-full rounded-lg mx-auto h-full object-cover"
       />
+      </div>
+      <div className='text-left md:w-1/2'>
+      <h1 className='text-2xl font-semibold'>{brand.brand_name}</h1>
       <p className='mb-2'>Rating: {brand.rating}</p>
       <p className='mb-2'>{brand.description}</p>
       <p className='mb-2'>Category: {brand.category}</p>
       <p className='mb-5'>Total Coupons: {coupons.length}</p>
 
-      <div className='grid grid-cols-1 md:grid-cols-2 gap-4'>
+      </div>
+     </div>
+      <div className='grid grid-cols-1 md:grid-cols-2 gap-4 mt-5'>
         {coupons.map((coupon, index) => (
           <div key={index} className='bg-white p-4 border rounded shadow-md'>
             <h3 className='text-lg font-semibold'>{coupon['coupon-code']}</h3>
@@ -80,6 +88,7 @@ const BrandDetails = () => {
         ))}
       </div>
     </div>
+</div>
   );
 };
 

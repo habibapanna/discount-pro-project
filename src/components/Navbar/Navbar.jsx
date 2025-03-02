@@ -20,56 +20,76 @@ const Navbar = () => {
   );
 
   return (
-    <div>
-      <div className="navbar bg-base-100 shadow-md">
-        <div className="navbar-start flex items-center">
-            {/* Dropdown button for smaller screens */}
-          <button
-            className="lg:hidden ml-4"
-            onClick={toggleMenu}
-            aria-label="Toggle navigation menu"
-          >
-            <i className="fas fa-bars text-2xl"></i>
-          </button>
-          <img className="w-12 h-12 rounded-full" src="https://i.ibb.co/VjPybjQ/logo.webp" alt="Logo" />
-          <h1 className="font-bold text-2xl text-red-500 ml-2"><i>COUPON</i></h1>     
-        </div>
+    <div className=" sticky top-0 z-50 backdrop-blur-md bg-white">
+<div className="navbar flex flex-col gap-2 md:flex-row md:items-center md:justify-between">
+  {/* Logo and menu button */}
+  <div className="flex items-center gap-2">
+    <button
+      className="lg:hidden ml-4"
+      onClick={toggleMenu}
+      aria-label="Toggle navigation menu"
+    >
+      <i className="fas fa-bars text-2xl text-blue-500"></i>
+    </button>
+    <img
+      className="w-8 h-8 rounded-full ml-2"
+      src="https://i.postimg.cc/k4vLKprw/gift-voucher.png"
+      alt="Logo"
+    />
+    <h1 className="font-bold text-2xl text-blue-500 font-mono">coupon</h1>
+  </div>
 
-        {/* Center navigation links (hidden on small screens) */}
-        <div className="navbar-center hidden lg:flex">
-          <ul className="menu menu-horizontal px-1 flex space-x-4">
-            {links}
-          </ul>
-        </div>
+  {/* Centered Navigation Links */}
+  <div className="hidden lg:flex flex-1 justify-center">
+    <ul className="menu menu-horizontal px-1 flex space-x-6">
+      {links}
+    </ul>
+  </div>
 
-        {/* Right side - User authentication */}
-        <div className="navbar-end flex items-center space-x-4">
-          {user && user.email ? (
-            <>
-              <div className="flex items-center space-x-2">
-                <img src={user.photoURL || "https://i.ibb.co.com/0CpDp01/download-8.jpg"} alt="User" className="w-10 h-10 rounded-full" />
-                <span className="text-gray-700">{user.email}</span>
-              </div>
-              <button onClick={logOut} className="btn bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600">
-                <i className="fa-solid fa-sign-out-alt mr-2"></i>Log Out
-              </button>
-            </>
-          ) : (
-            <>
-              <Link to="/login" className="btn bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">
-                <i className="fa-solid fa-sign-in-alt mr-2"></i>Login
-              </Link>
-              <Link to="/register" className="btn bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600">
-                <i className="fa-solid fa-user-plus mr-2"></i>Register
-              </Link>
-            </>
-          )}
+  {/* User authentication section */}
+  <div className="flex items-center space-x-4">
+    {user && user.email ? (
+      <>
+        <div className="flex items-center space-x-2">
+          <img
+            src={user.photoURL || "https://i.ibb.co.com/0CpDp01/download-8.jpg"}
+            alt="User"
+            className="w-8 h-8 rounded-full"
+          />
+          <span className="text-gray-700 text-sm font-extralight">
+            {user.email}
+          </span>
         </div>
-      </div>
+        <button
+          onClick={logOut}
+          className="btn btn-sm bg-red-500 text-white py-2 rounded hover:bg-red-600"
+        >
+          <i className="fa-solid fa-sign-out-alt"></i> Log Out
+        </button>
+      </>
+    ) : (
+      <>
+        <Link
+          to="/login"
+          className="btn btn-sm bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 border-none"
+        >
+          <i className="fa-solid fa-sign-in-alt"></i> Login
+        </Link>
+        <Link
+          to="/register"
+          className="btn btn-sm bg-green-500 text-white py-2 rounded hover:bg-green-600 border-none"
+        >
+          <i className="fa-solid fa-user-plus"></i> Register
+        </Link>
+      </>
+    )}
+  </div>
+</div>
+
 
       {/* Dropdown menu for smaller screens */}
       {menuOpen && (
-        <div className="lg:hidden mt-2 bg-base-100 p-4 shadow rounded-md">
+        <div className="lg:hidden mt-2 p-4 shadow-2xl rounded-md">
           <ul className="menu">
             {links}
           </ul>

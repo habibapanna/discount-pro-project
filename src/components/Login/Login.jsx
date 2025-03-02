@@ -2,7 +2,8 @@ import React, { useContext, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../providers/AuthProvider';
 import { toast } from 'react-toastify';
-
+import { CiLogin } from "react-icons/ci";
+import { FcGoogle } from "react-icons/fc";
 const Login = () => {
     const { userLogin, setUser, googleSignIn, logout } = useContext(AuthContext);
     const navigate = useNavigate();
@@ -42,7 +43,7 @@ const Login = () => {
     const handleEmailChange = (e) => setEmail(e.target.value);
 
     return (
-        <div className='flex justify-center items-center mt-12'>
+        <div className='flex justify-center items-center mt-12 px-10'>
             <div className="card p-10 bg-base-100 w-full max-w-xl border shrink-0 shadow-lg">
                 <h1 className='text-2xl font-bold text-center'>Login to Your Account</h1>
                 <form onSubmit={handleSubmit} className="card-body">
@@ -74,10 +75,10 @@ const Login = () => {
                         </label>
                     </div>
                     <div className="form-control mt-6">
-                        <button className="btn btn-primary">Login</button>
+                        <button className="btn bg-blue-400 hover:bg-blue-500"><CiLogin /> Login</button>
                     </div>
                     <p className='text-red-500 font-semibold'>Don't have an account? <Link className='hover:underline text-blue-500' to="/register">Register</Link></p>
-                    <button onClick={handleGoogleSignIn} className="btn btn-secondary mt-4 w-full">Login with Google</button>
+                    <button onClick={handleGoogleSignIn} className="btn bg-white border border-blue-400 mt-4 w-full"><FcGoogle className='text-2xl' /> Login with Google</button>
                 </form>
             </div>
         </div>

@@ -6,7 +6,7 @@ import TopBrands from '../TopBrands/TopBrands';
 
 const Home = () => {
     return (
-        <div>
+        <div className='overflow-x-hidden'>
             <section>
                 <SliderComponent className="animate__animated animate__fadeIn" />
             </section>
